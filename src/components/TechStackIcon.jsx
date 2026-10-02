@@ -1,21 +1,49 @@
-import React from 'react';
+import React from "react";
+import { Folder } from "lucide-react";
 
-const TechStackIcon = ({ TechStackIcon, Language }) => {
+const TechStackIcon = ({
+  TechStackIcon,
+  Language,
+  photos = [],
+  onClick,
+}) => {
   return (
-    <div className="group p-6 rounded-2xl bg-slate-800/50 hover:bg-slate-700/50 transition-all duration-300 ease-in-out flex flex-col items-center justify-center gap-3 hover:scale-105 cursor-pointer shadow-lg hover:shadow-xl">
-      <div className="relative">
-        <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full opacity-0 group-hover:opacity-50 blur transition duration-300"></div>
-        <img 
-          src={TechStackIcon} 
-          alt={`${Language} icon`} 
-          className="relative h-16 w-16 md:h-20 md:w-20 transform transition-transform duration-300"
-        />
+    <div
+      onClick={onClick}
+      className="group cursor-pointer flex flex-col items-center justify-center"
+    >
+      {/* Folder */}
+      <div className="relative w-32 h-24 md:w-40 md:h-28 transition-all duration-300 group-hover:scale-105">
+
+        {/* Folder tab */}
+        <div className="absolute -top-2 left-2 w-14 h-6 bg-yellow-400 rounded-t-lg" />
+
+        {/* Folder body */}
+        <div className="absolute inset-0 top-2 bg-yellow-400 rounded-xl shadow-lg flex items-center justify-center">
+
+          <img
+            src={TechStackIcon}
+            alt={`${Language} icon`}
+            className="relative h-12 w-12 md:h-16 md:w-16 object-contain transition-transform duration-300 group-hover:scale-110"
+          />
+
+        </div>
+
       </div>
-      <span className="text-slate-300 font-semibold text-sm md:text-base tracking-wide group-hover:text-white transition-colors duration-300">
+
+      {/* Name */}
+      <span className="mt-4 text-slate-300 font-semibold text-sm md:text-base group-hover:text-white transition-colors">
         {Language}
       </span>
+
+      {/* Photo count */}
+      {photos.length > 0 && (
+        <span className="text-xs text-slate-500 mt-1">
+          {photos.length} photos
+        </span>
+      )}
     </div>
   );
 };
 
-export default TechStackIcon; 
+export default TechStackIcon;

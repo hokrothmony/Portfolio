@@ -63,7 +63,7 @@ const SocialLink = memo(({ icon: Icon, link }) => (
   </a>
 ))
 
-const WORDS = ["Camera Operator", "Video Editor", "Sound Operator", "Assistant Camera Operator"]
+const WORDS = ["Camera Operator", "Video Editor", "Sound Operator", "Assistant Camera Operator", "Lighting Technical", "Gaffer", "Grip", "Production Assistant", "Director of Photography", "Colorist", "Visual Effects Supervisor", "Post-Production Supervisor", "Film Editor", "Sound Designer", "Composer", "Screenwriter", "Producer", "Director"]
 const TECH_STACK = ["Davanci resolve ", "Adobe photoshop", "Adobe Lightroom", "Canva"]
 
 const SOCIAL_LINKS = [
